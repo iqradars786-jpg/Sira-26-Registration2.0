@@ -128,7 +128,62 @@ button{appearance:none}
 
 /* ---------- SUMMARY ---------- */
 .summary-title{margin-bottom:18px}.summary-title h2{margin:0;font-family:Manrope,sans-serif;font-size:17px;letter-spacing:-.35px}.summary-title p{margin:5px 0 0;color:#9299a7;font-size:10px}.summary-table th{white-space:nowrap}.summary-table td{vertical-align:top}.summary-names{display:flex;flex-direction:column;gap:6px;min-width:145px}.summary-student{display:flex;align-items:flex-start;gap:7px;padding:8px 9px;background:#f8f8f9;border:1px solid #f0f1f3;border-radius:9px;font-size:10px}.summary-student .check{color:#0d9a69;font-weight:900}.summary-student small{display:block;color:#8b93a2;font-size:8px;margin-top:3px}.not-registered{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:9px;background:#f5f6f8;color:#b0b5bf;font-size:12px}
+/* Alternating Live Summary programme cards */
+.summary-table tbody tr:nth-child(odd) td{background:#ead8dc;border-bottom-color:#dcc5ca}
+.summary-table tbody tr:nth-child(even) td{background:#dfe6ee;border-bottom-color:#cfd8e2}
+.summary-table tbody tr:nth-child(odd) td:first-child{border-radius:12px 0 0 12px}
+.summary-table tbody tr:nth-child(odd) td:last-child{border-radius:0 12px 12px 0}
+.summary-table tbody tr:nth-child(even) td:first-child{border-radius:12px 0 0 12px}
+.summary-table tbody tr:nth-child(even) td:last-child{border-radius:0 12px 12px 0}
+.summary-table tbody tr:hover td{filter:brightness(.98)}
+.summary-table tbody tr td strong{color:#202634}
+.summary-table tbody tr .summary-student{background:rgba(255,255,255,.62);border-color:rgba(255,255,255,.55)}
+
 .deadline-box{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px;background:linear-gradient(135deg,#fafafa,#f6f7f8);border:1px solid #eff0f2;border-radius:14px}.deadline-info strong{display:block;font-family:Manrope,sans-serif;font-size:12px}.deadline-info span{display:block;margin-top:4px;color:#8992a4;font-size:10px}
+
+/* ---------- COLOR / UX POLISH ---------- */
+body{
+  background:
+    radial-gradient(circle at 92% 8%,rgba(227,63,85,.075),transparent 25%),
+    radial-gradient(circle at 8% 86%,rgba(56,103,232,.055),transparent 23%),
+    var(--paper);
+}
+.sidebar{background:linear-gradient(180deg,#fff 0%,#fffafb 62%,#f7f8fc 100%)}
+.content{position:relative}
+.stat-card:nth-child(1){background:linear-gradient(145deg,#fff,#fff5f6)}
+.stat-card:nth-child(2){background:linear-gradient(145deg,#fff,#f5f7ff)}
+.stat-card:nth-child(3){background:linear-gradient(145deg,#fff,#f3fbf8)}
+.stat-card:nth-child(4){background:linear-gradient(145deg,#fff,#fff8ec)}
+.stat-card:nth-child(2) .stat-icon{background:var(--blue-soft);color:var(--blue)}
+.stat-card:nth-child(3) .stat-icon{background:var(--green-soft);color:var(--green)}
+.stat-card:nth-child(4) .stat-icon{background:var(--amber-soft);color:var(--amber)}
+.event-card{background:linear-gradient(145deg,#fff 0%,#fff 70%,#fff8f9 100%)}
+.team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.team-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.team-heading h4{margin:0}
+.team-count{font-size:9px;font-weight:800;color:var(--brand);background:var(--brand-soft);padding:5px 8px;border-radius:999px}
+.team-students{max-height:300px;overflow:auto;padding-right:2px}
+.team-student-check{cursor:pointer;margin-bottom:7px}
+.student-check-main{display:flex;flex-direction:column;gap:3px;min-width:0}
+.student-check-main strong{font-size:10px}
+.student-check-main small{font-size:8px;color:#9299a7}
+.student-name-btn{border:0;background:transparent;padding:5px 7px;margin:-5px -7px;display:inline-flex;align-items:center;gap:6px;color:var(--ink);cursor:pointer;border-radius:8px;text-align:left}
+.student-name-btn:hover{background:var(--brand-soft);color:var(--brand)}
+.student-name-btn .material-symbols-rounded{font-size:14px;color:var(--brand);opacity:.75}
+.deadline-box{position:relative;overflow:hidden;background:linear-gradient(135deg,#fff5f6 0%,#fff 58%,#fff8ed 100%);border-color:#ffd9df;box-shadow:0 10px 28px rgba(227,63,85,.08)}
+.deadline-box:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--brand),#f6a623)}
+.deadline-label{display:flex;align-items:center;gap:5px;color:var(--brand);font-size:9px;font-weight:900;letter-spacing:1px;margin-bottom:5px}
+.deadline-label .material-symbols-rounded{font-size:14px}
+.deadline-countdown{min-width:230px;text-align:center;padding:14px 18px;border-radius:14px;background:#171c27;color:#fff;font-family:Manrope,sans-serif;font-size:20px;font-weight:800;letter-spacing:-.5px;box-shadow:0 10px 25px rgba(17,24,39,.14)}
+.deadline-countdown.closed{background:linear-gradient(135deg,#b72d43,#e33f55)}
+.deadline-countdown .countdown-label{display:block;font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:1.2px;text-transform:uppercase;opacity:.65;margin-bottom:4px}
+.student-program-modal{max-width:620px}
+.modal-subtitle{margin:4px 0 0;color:#8c94a2;font-size:10px}
+.student-program-list{display:grid;gap:8px}
+.student-program-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,#fff,#fafbfc)}
+.student-program-item strong{display:block;font-size:11px}.student-program-item small{display:block;color:#9299a7;font-size:9px;margin-top:4px}
+.student-program-team{font-size:9px;font-weight:800;color:var(--brand);background:var(--brand-soft);padding:6px 8px;border-radius:999px;white-space:nowrap}
+@media(max-width:760px){.team-grid{grid-template-columns:1fr}.deadline-box{align-items:stretch;flex-direction:column}.deadline-countdown{min-width:0;width:100%}}
 
 /* ---------- LOGIN ---------- */
 .login-screen{position:fixed;inset:0;background:#11151d;z-index:5000;display:flex;align-items:center;justify-content:center;padding:24px;overflow:auto}
@@ -526,16 +581,11 @@ button{appearance:none}
                 <div class="deadline-box">
 
                     <div class="deadline-info">
-
-                        <strong id="dashboardDeadline">
-                            No deadline set
-                        </strong>
-
-                        <span id="dashboardDeadlineText">
-                            Registration is currently open.
-                        </span>
-
+                        <div class="deadline-label"><span class="material-symbols-rounded">timer</span> REGISTRATION DEADLINE</div>
+                        <strong id="dashboardDeadline">No deadline set</strong>
+                        <span id="dashboardDeadlineText">Registration is currently open.</span>
                     </div>
+                    <div id="deadlineCountdown" class="deadline-countdown">No deadline</div>
 
                     <button
                         id="dashboardDeadlineButton"
@@ -571,7 +621,7 @@ button{appearance:none}
                         </h2>
 
                         <p id="studentDescription">
-                            Add students to your group
+                            Add students with their actual category. General programmes can include students from all three categories.
                         </p>
 
                     </div>
@@ -1071,10 +1121,6 @@ button{appearance:none}
                             Senior
                         </option>
 
-                        <option value="General">
-                            General
-                        </option>
-
                     </select>
 
                 </div>
@@ -1261,6 +1307,20 @@ button{appearance:none}
 </div>
 
 
+
+<!-- ================= STUDENT PROGRAMMES MODAL ================= -->
+<div id="studentProgramsModal" class="modal">
+    <div class="modal-box student-program-modal">
+        <div class="modal-header">
+            <div>
+                <h2 id="studentProgramTitle">Student Programmes</h2>
+                <p id="studentProgramMeta" class="modal-subtitle"></p>
+            </div>
+            <button class="close-btn" onclick="closeModal('studentProgramsModal')">×</button>
+        </div>
+        <div id="studentProgramList" class="student-program-list"></div>
+    </div>
+</div>
 
 <!-- TOAST -->
 
@@ -1726,6 +1786,47 @@ function saveStudent(event){
 }
 
 
+function showStudentPrograms(studentId){
+
+    const student = students.find(s => s.id === studentId);
+    if(!student) return;
+
+    if(currentRole !== "admin" && student.group !== currentRole){
+        showToast("You cannot view this student's details");
+        return;
+    }
+
+    const title = document.getElementById("studentProgramTitle");
+    const meta = document.getElementById("studentProgramMeta");
+    const list = document.getElementById("studentProgramList");
+
+    title.textContent = student.name;
+    meta.textContent = `${student.category || "Category not set"} • ${student.group}`;
+
+    const myAssignments = assignments.filter(a => a.studentId === studentId);
+
+    if(myAssignments.length === 0){
+        list.innerHTML = `<div class="empty">No programmes assigned yet.</div>`;
+    }else{
+        list.innerHTML = myAssignments.map(a => {
+            const event = events.find(e => e.id === a.eventId);
+            if(!event) return "";
+            return `
+                <div class="student-program-item">
+                    <div>
+                        <strong>${escapeHtml(event.name)}</strong>
+                        <small>${escapeHtml(event.category)} • ${event.type === "group" ? "Group Event" : "Single Event"}</small>
+                    </div>
+                    ${a.team ? `<span class="student-program-team">${escapeHtml(a.team)}</span>` : `<span class="badge badge-green">Registered</span>`}
+                </div>
+            `;
+        }).join("");
+    }
+
+    document.getElementById("studentProgramsModal").classList.add("show");
+}
+
+
 function deleteStudent(id){
 
     if(currentRole !== "admin"){
@@ -1810,9 +1911,13 @@ function renderStudents(){
                 </td>
 
                 <td>
-                    <strong>
-                        ${escapeHtml(student.name)}
-                    </strong>
+                    <button
+                        class="student-name-btn"
+                        onclick="showStudentPrograms('${student.id}')"
+                        title="Tap to view this student's programmes">
+                        <strong>${escapeHtml(student.name)}</strong>
+                        <span class="material-symbols-rounded">event_note</span>
+                    </button>
                 </td>
 
                 <td>
@@ -2252,7 +2357,9 @@ function renderAssignmentStudents(){
 
     const visibleStudents =
         getVisibleStudents().filter(student =>
-            (student.category || "General") === event.category
+            event.category === "General"
+            ? ["Sub-Junior", "Junior", "Senior"].includes(student.category)
+            : student.category === event.category
         );
 
 
@@ -2461,10 +2568,8 @@ function renderGroupAssignment(
     const area =
         document.getElementById("assignmentArea");
 
-
     const teams =
         ["Team A","Team B","Team C","Team D"];
-
 
     area.innerHTML = `
 
@@ -2473,42 +2578,26 @@ function renderGroupAssignment(
             <div class="card-header">
 
                 <div>
-
-                    <h2>
-                        ${escapeHtml(event.name)}
-                    </h2>
-
-                    <p>
-                        Create team-wise registration
-                    </p>
-
+                    <h2>${escapeHtml(event.name)}</h2>
+                    <p>Select each student individually for a team. No Ctrl/hold required.</p>
                 </div>
 
-                <span class="badge badge-orange">
-                    Group Event
-                </span>
+                <span class="badge badge-orange">Group Event</span>
 
             </div>
 
+            <div class="team-grid">
 
-            ${teams.map(team => {
-
-                return `
+                ${teams.map(team => `
 
                     <div class="team-box">
 
-                        <h4>
-                            ${team}
-                        </h4>
+                        <div class="team-heading">
+                            <h4>${team}</h4>
+                            <span class="team-count" id="count-${event.id}-${team.replace(/\s/g,'-')}"></span>
+                        </div>
 
-                        <select
-                            class="team-select"
-                            multiple
-                            onchange="saveTeamAssignment(
-                                '${event.id}',
-                                '${team}',
-                                this
-                            )">
+                        <div class="team-students">
 
                             ${visibleStudents.map(student => {
 
@@ -2519,139 +2608,109 @@ function renderGroupAssignment(
                                         a.team === team
                                     );
 
-
                                 return `
-
-                                    <option
-                                        value="${student.id}"
-                                        ${assigned ? "selected" : ""}>
-
-                                        ${escapeHtml(student.name)}
-
-                                    </option>
-
+                                    <label class="student-check team-student-check">
+                                        <input
+                                            type="checkbox"
+                                            ${assigned ? "checked" : ""}
+                                            onchange="toggleTeamAssignment('${event.id}','${student.id}','${team}',this.checked)">
+                                        <span class="student-check-main">
+                                            <strong>${escapeHtml(student.name)}</strong>
+                                            <small>${escapeHtml(student.category || "")}</small>
+                                        </span>
+                                    </label>
                                 `;
 
                             }).join("")}
 
-                        </select>
-
-                        <small style="
-                            display:block;
-                            margin-top:7px;
-                            color:#9299a7;
-                            font-size:9px;
-                        ">
-                            Hold Ctrl / Command to select multiple students.
-                        </small>
+                        </div>
 
                     </div>
 
-                `;
+                `).join("")}
 
-            }).join("")}
+            </div>
 
         </div>
 
     `;
 
+    updateTeamCounts(event.id, teams, visibleStudents);
 }
 
 
-function saveTeamAssignment(
+function toggleTeamAssignment(
     eventId,
+    studentId,
     team,
-    select
+    checked
 ){
 
     if(isRegistrationLocked() && currentRole !== "admin"){
-
         showToast("Registration deadline has passed");
-
         renderAssignmentStudents();
-
         return;
+    }
+
+    if(checked){
+
+        const student = students.find(s => s.id === studentId);
+        if(!student) return;
+
+        // A student belongs to only one team within the same group event.
+        assignments = assignments.filter(a =>
+            !(a.eventId === eventId && a.studentId === studentId)
+        );
+
+        assignments.push({
+            id: Date.now().toString() + Math.random(),
+            eventId,
+            studentId,
+            studentName: student.name,
+            group: student.group,
+            team,
+            createdAt: new Date().toISOString()
+        });
+
+    }else{
+
+        assignments = assignments.filter(a =>
+            !(a.eventId === eventId && a.studentId === studentId && a.team === team)
+        );
 
     }
 
-
-    const selectedIds =
-        [...select.selectedOptions]
-        .map(option => option.value);
-
-
-    const visibleIds =
-        getVisibleStudents()
-        .map(student => student.id);
-
-
-    /* Remove old assignments for this event/team
-       only for the current leader's students */
-
-    assignments =
-        assignments.filter(a => {
-
-            if(
-                a.eventId !== eventId ||
-                a.team !== team
-            ){
-
-                return true;
-
-            }
-
-
-            return !visibleIds.includes(
-                a.studentId
-            );
-
-        });
-
-
-    selectedIds.forEach(studentId => {
-
-        const student =
-            students.find(
-                s => s.id === studentId
-            );
-
-
-        if(!student) return;
-
-
-        assignments.push({
-
-            id: Date.now().toString()
-                + Math.random(),
-
-            eventId,
-
-            studentId,
-
-            studentName:
-                student.name,
-
-            group:
-                student.group,
-
-            team,
-
-            createdAt:
-                new Date().toISOString()
-
-        });
-
-    });
-
-
     saveData();
-
     updateDashboard();
-
     renderSummary();
+    renderAssignmentStudents();
+    showToast(checked ? studentNameForToast(studentId) + " added to " + team : "Student removed from " + team);
+}
 
-    showToast(team + " updated");
 
+function studentNameForToast(studentId){
+    const student = students.find(s => s.id === studentId);
+    return student ? student.name : "Student";
+}
+
+
+function updateTeamCounts(eventId, teams, visibleStudents){
+
+    teams.forEach(team => {
+        const safeId = `count-${eventId}-${team.replace(/\s/g,'-')}`;
+        const el = document.getElementById(safeId);
+        if(!el) return;
+
+        const count = visibleStudents.filter(student =>
+            assignments.some(a =>
+                a.eventId === eventId &&
+                a.studentId === student.id &&
+                a.team === team
+            )
+        ).length;
+
+        el.textContent = count + " student" + (count === 1 ? "" : "s");
+    });
 }
 
 
@@ -3144,118 +3203,54 @@ function isRegistrationLocked(){
 
 function updateDeadlineUI(){
 
-    const locked =
-        isRegistrationLocked();
+    const locked = isRegistrationLocked();
 
-
-    const status =
-        document.getElementById(
-            "deadlineStatus"
-        );
-
-
-    const statStatus =
-        document.getElementById(
-            "statStatus"
-        );
-
+    const status = document.getElementById("deadlineStatus");
+    const statStatus = document.getElementById("statStatus");
 
     if(locked){
-
-        if(status){
-
-            status.textContent =
-                "Registration Closed";
-
-            status.className =
-                "badge badge-orange";
-
-        }
-
-
-        if(statStatus){
-
-            statStatus.textContent =
-                "Closed";
-
-        }
-
+        if(status){ status.textContent = "Registration Closed"; status.className = "badge badge-orange"; }
+        if(statStatus){ statStatus.textContent = "Closed"; }
     }else{
-
-        if(status){
-
-            status.textContent =
-                "Registration Open";
-
-            status.className =
-                "badge badge-green";
-
-        }
-
-
-        if(statStatus){
-
-            statStatus.textContent =
-                "Open";
-
-        }
-
+        if(status){ status.textContent = deadline ? "Registration Open" : "No Deadline"; status.className = deadline ? "badge badge-green" : "badge badge-gray"; }
+        if(statStatus){ statStatus.textContent = deadline ? "Open" : "Open"; }
     }
 
-
-    const deadlineText =
-        document.getElementById(
-            "dashboardDeadline"
-        );
-
-
-    const deadlineSub =
-        document.getElementById(
-            "dashboardDeadlineText"
-        );
-
+    const deadlineText = document.getElementById("dashboardDeadline");
+    const deadlineSub = document.getElementById("dashboardDeadlineText");
+    const countdown = document.getElementById("deadlineCountdown");
 
     if(deadlineText){
-
-        if(deadline){
-
-            deadlineText.textContent =
-                formatDate(deadline);
-
-        }else{
-
-            deadlineText.textContent =
-                "No deadline set";
-
-        }
-
+        deadlineText.textContent = deadline ? formatDate(deadline) : "No deadline set";
     }
-
 
     if(deadlineSub){
-
-        deadlineSub.textContent =
-            locked
-            ? "Registration is closed."
+        deadlineSub.textContent = locked
+            ? "Registration is closed. Admin can change the deadline."
             : deadline
-                ? "Leaders can edit registrations until this time."
-                : "Registration is currently open.";
-
+                ? "Group leaders can edit registrations until this time."
+                : "Registration is currently open until a deadline is set.";
     }
 
-
-    const input =
-        document.getElementById(
-            "deadlineInput"
-        );
-
-
-    if(input && deadline){
-
-        input.value = deadline;
-
+    if(countdown){
+        countdown.classList.toggle("closed", locked);
+        if(!deadline){
+            countdown.innerHTML = `<span class="countdown-label">COUNTDOWN</span>No deadline`;
+        }else if(locked){
+            countdown.innerHTML = `<span class="countdown-label">STATUS</span>REGISTRATION CLOSED`;
+        }else{
+            const diff = new Date(deadline).getTime() - Date.now();
+            const total = Math.max(0, Math.floor(diff / 1000));
+            const days = Math.floor(total / 86400);
+            const hours = Math.floor((total % 86400) / 3600);
+            const mins = Math.floor((total % 3600) / 60);
+            const secs = total % 60;
+            countdown.innerHTML = `<span class="countdown-label">TIME REMAINING</span>${days}d ${String(hours).padStart(2,"0")}h ${String(mins).padStart(2,"0")}m ${String(secs).padStart(2,"0")}s`;
+        }
     }
 
+    const input = document.getElementById("deadlineInput");
+    if(input && deadline){ input.value = deadline; }
 }
 
 
@@ -3726,28 +3721,23 @@ function formatDate(date){
 
     if(!date) return "—";
 
-
-    const d =
-        new Date(date);
-
+    const d = new Date(date);
 
     if(isNaN(d.getTime())){
-
         return "—";
-
     }
 
-
-    return d.toLocaleString(
+    return new Intl.DateTimeFormat(
         "en-IN",
         {
             day:"2-digit",
             month:"short",
             year:"numeric",
             hour:"2-digit",
-            minute:"2-digit"
+            minute:"2-digit",
+            hour12:true
         }
-    );
+    ).format(d);
 
 }
 
@@ -3771,6 +3761,8 @@ function escapeHtml(value){
 
 }
 
+
+setInterval(updateDeadlineUI, 1000);
 
 /* =========================================================
    INITIAL LOAD
